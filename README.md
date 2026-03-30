@@ -110,11 +110,7 @@ Built as part of the **True Beacon Quant Research Assignment**, the goal is to i
   * Stop-loss logic
   * Volatility regime detection
 
----
 
-## 👤 Author
-
-**Vikas**
 
 ---
 
