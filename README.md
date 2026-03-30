@@ -1,38 +1,127 @@
-# True Beacon-Quant Research Project
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=wmivikas&show_icons=true)
+![Profile views](https://komarev.com/ghpvc/?username=wmivikas&color=blue)
+![Made with](https://img.shields.io/badge/Made%20with-Jupyter-orange)
 
-## Overview
-This repository contains the code and documentation for the pairs trading strategy developed as part of the TrueBeacon intern assignment. The project aims to build and optimize a medium-frequency trading strategy based on the volatility spread between Nifty and Bank Nifty indices.
+# 📈 True Beacon Quant Research Project
 
-## Project Structure
-**data.parquet**: The dataset containing minute-level implied volatilities (IVs) of Bank Nifty and Nifty, along with Time To Expiry (TTE) for the series.<br>
-**trading_strategy.ipynb**: The main Python file containing the implementation of the pairs trading strategy. <br>
-**trading_strategy.xlsx**: The Excel file inside the output of the result. <br>
-**requirements.txt**: List of required Python packages. <br>
-**Full_Data.png**: This image is the output of full-data trading strategies.<br>
-**One_day_data.png**: This image outputs a one-day '2021-10-11' trading strategy.
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-black?logo=pandas)
+![NumPy](https://img.shields.io/badge/Numpy-Scientific%20Computing-blue?logo=numpy)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![Finance](https://img.shields.io/badge/Domain-Quant%20Finance-green)
 
+---
 
-## Assumptions
-1. The dataset may contain missing values handled by Pandas 'isnan' function.
-2. The trading horizon for the strategy ranges from 30 minutes to 5 days.
+## 🧠 Overview
 
-## Implementation
-### Base Model: Z-Score
-The base model follows a z-score-based approach. The z-score of the spread between Bank Nifty IV and Nifty IV is calculated and used to identify divergence from the historical mean. Trades are executed based on the z-score thresholds.
+This project implements a **pairs trading strategy** based on the **volatility spread** between:
 
-### Modified Model: Moving Average(MA)
-A moving average model is a statistical technique commonly used in time series analysis to smooth out fluctuations in data and identify trends over time. It is beneficial for detecting patterns or trends in noisy data sets.
+* Nifty Index
+* Bank Nifty Index
 
-## Performance Values
-The performance of both the base and modified models is evaluated based on the following metrics:
-### Base Model
-1. Absolute P/L: -26.785552670145883
-2. Sharpe Ratio: -0.060677269687343514
-3. Drawdown: -26.786400988028007
-### MA Model
-1. Absolute P/L: -26.785552670145883
-2. Sharpe Ratio: -0.060677269687343514
-3. Drawdown: -26.786400988028007
+Built as part of the **True Beacon Quant Research Assignment**, the goal is to identify statistical arbitrage opportunities using **mean-reversion techniques**.
 
-## Submission
-The submission includes the GitHub link to this repository and the complete Python code base.
+---
+
+## 📊 Strategy Logic
+
+### 🔹 Base Model — Z-Score
+
+* Compute spread between Nifty IV & Bank Nifty IV
+* Normalize using z-score
+* Trade on deviation from mean
+
+👉 Core idea: **Mean Reversion**
+
+---
+
+### 🔹 Improved Model — Moving Average (MA)
+
+* Smooth spread using moving average
+* Generate signals from trend + deviation
+
+👉 Core idea: **Noise reduction + trend capture**
+
+---
+
+## 📁 Project Structure
+
+```bash
+├── data.parquet              # IV dataset (Nifty & BankNifty)
+├── trading_strategy.ipynb    # Core implementation
+├── trading_strategy.xlsx    # Output results
+├── requirements.txt         # Dependencies
+├── Full_Data.png            # Full strategy visualization
+├── One_day_data.png         # Single day strategy (2021-10-11)
+```
+
+---
+
+## 📉 Results
+
+### ⚠️ Base Model Performance
+
+* P/L: **-26.78**
+* Sharpe Ratio: **-0.06**
+* Drawdown: **-26.78**
+
+### ⚠️ MA Model Performance
+
+* P/L: **-26.78**
+* Sharpe Ratio: **-0.06**
+* Drawdown: **-26.78**
+
+📌 Insight: Strategy needs **better signal filtering / risk management**
+
+---
+
+## 📊 Visualizations
+
+### 📅 One Day Strategy
+
+![One Day Strategy](One_day_data.png)
+
+### 📈 Full Data Strategy
+
+![Full Data Strategy](Full_Data.png)
+
+---
+
+## ⚙️ Assumptions
+
+* Missing values handled using Pandas
+* Trading horizon: **30 minutes → 5 days**
+* Mean-reversion holds in IV spread
+
+---
+
+## 🛠️ Tech Stack
+
+* Python
+* Pandas, NumPy
+* Matplotlib
+* Jupyter Notebook
+
+---
+
+## 📌 Key Learnings
+
+* Z-score alone is **not sufficient** for stable trading
+* IV spreads are **noisy and regime-dependent**
+* Strategy needs:
+
+  * Better entry filters
+  * Stop-loss logic
+  * Volatility regime detection
+
+---
+
+## 👤 Author
+
+**Vikas**
+
+---
+
+## ⭐ If you found this useful
+
+Give it a star ⭐ and feel free to fork!
