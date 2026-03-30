@@ -1,7 +1,3 @@
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=wmivikas&show_icons=true)
-![Profile views](https://komarev.com/ghpvc/?username=wmivikas&color=blue)
-![Made with](https://img.shields.io/badge/Made%20with-Jupyter-orange)
-
 # 📈 True Beacon Quant Research Project
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
